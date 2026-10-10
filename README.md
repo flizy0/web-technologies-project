@@ -9,5 +9,5 @@ Name          | What to do
 Alen          | index.html
 Kamilla       | about_us.html
 Talgat        | catalog.html
-Eldar         | shopping_cart.html
+Eldar         | basket.html
 Jamil         | contacts.html
