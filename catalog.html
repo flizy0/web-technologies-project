@@ -6,117 +6,457 @@
     <link rel="stylesheet" href="./css/output.css">
     <title>Document</title>
 </head>
-<body class="flex flex-col min-h-screen">
-    <header class="flex justify-between items-center p-4 bg-amber-800 text-white hover:no-underline flex-1">
-            <h1 class="text-xl font-bold">Flexus</h1>
-            <nav>
-                <ul class="flex space-x-4">
-                    <li><a href="#home" class="hover:underline">Home</a></li>
-                    <li><a href="#Basket" class="hover:underline">Basket</a></li>
-                    <li><a href="#about_us" class="hover:underline">About Us</a></li>
-                    <li><a href="#contacts" class="hover:underline">Contacts</a></li>
+<body class="flex flex-col min-h-screen bg-slate-50">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex min-h-20 flex-wrap items-center justify-between gap-4">
+
+        <a href="index.html" class="flex items-center space-x-2 md:space-x-3">
+            <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-amber-600">
+                <svg class="h-5 w-5" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.25m3-14.208A8.967 8.967 0 0118 3.75c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18c-2.305 0-4.408.867-6 2.25m0-14.208v14.25"/>
+                </svg>
+            </span>
+            <span class="text-lg md:text-xl font-bold tracking-tight text-slate-900">Flexus</span>
+        </a>
+
+        <input type="checkbox" id="menu-toggle" class="peer hidden">
+
+        <label for="menu-toggle" class="ml-auto cursor-pointer p-1 md:hidden" aria-label="Open menu">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+        </label>
+
+        <nav class="hidden w-full flex-col gap-4 peer-checked:flex md:flex md:w-auto md:flex-row md:items-center md:gap-6 lg:gap-8 text-sm font-medium text-slate-600 bg-stone-50 md:bg-transparent">
+            <a href="index.html" class="hover:text-blue-600 transition">Home</a>
+            <a href="catalog.html" class="hover:text-blue-600 transition">Catalog</a>
+            <a href="about_us.html" class="hover:text-blue-600 transition">About Us</a>
+            <a href="contacts.html" class="hover:text-blue-600 transition">Contacts</a>
+            <a href="basket.html" class="md:hidden text-amber-600 font-semibold" aria-current="page">Basket</a>
+        </nav>
+
+        <a href="basket.html" class="hidden md:inline-block bg-amber-600 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-lg text-xs md:text-sm font-medium shadow-sm transition hover:bg-amber-700" aria-current="page">Basket</a>
+
+    </div>
+</header>
+
+    <main class="flex flex-col bg-amber-50 p-4 sm:p-6 lg:p-8 space-y-6 flex-1">
+
+        <p class="text-center text-2xl text-slate-900">Explore our wide range of books and find what suits your needs.</p>
+
+        <!-- Каталог: фильтр + сетка карточек -->
+        <section class="flex flex-col lg:flex-row bg-white rounded-xl shadow-sm p-4 gap-4">
+
+            <!-- Aside: фильтр по жанрам -->
+            <aside class="lg:flex-1 bg-amber-900 rounded-lg p-6 text-white flex flex-col gap-4">
+                <h2 class="text-lg font-bold tracking-wide">Filter by Genre</h2>
+                <ul class="flex flex-col gap-3" id="filter-list">
+                    <li>
+                        <label class="flex items-center gap-3 cursor-pointer select-none">
+                            <input type="checkbox" value="Classic" checked class="w-4 h-4 accent-amber-400 cursor-pointer">
+                            <span class="font-medium">Classic</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="flex items-center gap-3 cursor-pointer select-none">
+                            <input type="checkbox" value="Sci-Fi" checked class="w-4 h-4 accent-amber-400 cursor-pointer">
+                            <span class="font-medium">Sci-Fi</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="flex items-center gap-3 cursor-pointer select-none">
+                            <input type="checkbox" value="Fantasy" checked class="w-4 h-4 accent-amber-400 cursor-pointer">
+                            <span class="font-medium">Fantasy</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="flex items-center gap-3 cursor-pointer select-none">
+                            <input type="checkbox" value="Romance" checked class="w-4 h-4 accent-amber-400 cursor-pointer">
+                            <span class="font-medium">Romance</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="flex items-center gap-3 cursor-pointer select-none">
+                            <input type="checkbox" value="Horror" checked class="w-4 h-4 accent-amber-400 cursor-pointer">
+                            <span class="font-medium">Horror</span>
+                        </label>
+                    </li>
                 </ul>
-            </nav>
-    </header>
-    <main class="flex-col bg-amber-100 p-4 space-y-4 flex-14">
-     <p class="text-center text-2xl">Explore our wide range of books and find what suits your needs.</p>
-     
-    <section class="flex min-h-[60vh] bg-white flex-wrap p-4 gap-4">
-        <aside class="flex flex-1 justify-center items-center bg-slate-800 p-4">
-            <p class="text-white">Special Offer: Get 20% off on your first purchase!</p>
-        </aside>
-        <ul class="flex flex-3 min-w-0 bg-white flex-wrap content-start gap-4 h-[479px] overflow-y-auto">         
-            <li class="bg-slate-800 h-48 w-[calc(1/3*100%-11px)] shrink-0">Item 1</li>
-            <li class="bg-slate-800 h-48 w-[calc(1/3*100%-11px)] shrink-0">Item 2</li>
-            <li class="bg-slate-800 h-48 w-[calc(1/3*100%-11px)] shrink-0">Item 3</li>
-            <li class="bg-slate-800 h-48 w-[calc(1/3*100%-11px)] shrink-0">Item 1</li>
-            <li class="bg-slate-800 h-48 w-[calc(1/3*100%-11px)] shrink-0">Item 2</li>
-            <li class="bg-slate-800 h-48 w-[calc(1/3*100%-11px)] shrink-0">Item 3</li>
-            <li class="bg-slate-800 h-48 w-[calc(1/3*100%-11px)] shrink-0">Item 1</li>
-            <li class="bg-slate-800 h-48 w-[calc(1/3*100%-11px)] shrink-0">Item 2</li>
-            <li class="bg-slate-800 h-48 w-[calc(1/3*100%-11px)] shrink-0">Item 3</li>
-            <li class="bg-slate-800 h-48 w-[calc(1/3*100%-11px)] shrink-0">Item 1</li>
-            <li class="bg-slate-800 h-48 w-[calc(1/3*100%-11px)] shrink-0">Item 2</li>
-            <li class="bg-slate-800 h-48 w-[calc(1/3*100%-11px)] shrink-0">Item 3</li>
-            <li class="bg-slate-800 h-48 w-[calc(1/3*100%-11px)] shrink-0">Item 1</li>
-            <li class="bg-slate-800 h-48 w-[calc(1/3*100%-11px)] shrink-0">Item 2</li>
-            <li class="bg-slate-800 h-48 w-[calc(1/3*100%-11px)] shrink-0">Item 3</li>
-            <li class="bg-slate-800 h-48 w-[calc(1/3*100%-11px)] shrink-0">Item 1</li>
-            <li class="bg-slate-800 h-48 w-[calc(1/3*100%-11px)] shrink-0">Item 2</li>
-            <li class="bg-slate-800 h-48 w-[calc(1/3*100%-11px)] shrink-0">Item 3</li>
-        </ul>
-    </section>
-   <section class="bg-white px-4 py-12">
+                <button id="clear-filters"
+                    class="mt-auto text-sm text-amber-300 hover:text-white underline text-left transition">
+                    Clear all
+                </button>
+                <button id="select-all-filters"
+                    class="text-sm text-amber-300 hover:text-white underline text-left transition">
+                    Select all
+                </button>
+            </aside>
 
-    <h2 class="text-3xl font-bold text-center mb-4">
-        How It Works?
-    </h2>
+            <!-- Сетка книг: 1 колонка (mobile) → 2 (tablet) → 3 (desktop) -->
+            <ul id="book-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:flex-[3] w-full max-h-[600px] overflow-y-auto">
 
-    <p class="text-center max-w-2xl mx-auto mb-12">
-        Find your favorite book, explore our collection,
-        and start your reading journey in three simple steps.
-    </p>
+                <!-- Classic (6) -->
+                <li data-genre="Classic" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-48 text-white">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Classic</span>
+                        <h3 class="text-base font-semibold mt-1 leading-snug">Crime and Punishment</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">Fyodor Dostoevsky</p>
+                    </div>
+                    <button class="mt-auto bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition w-full">Buy</button>
+                </li>
 
-    <ol class="flex flex-col md:flex-row items-center justify-evenly gap-12 max-w-6xl mx-auto">
+                <li data-genre="Classic" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-48 text-white">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Classic</span>
+                        <h3 class="text-base font-semibold mt-1 leading-snug">Anna Karenina</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">Leo Tolstoy</p>
+                    </div>
+                    <button class="mt-auto bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition w-full">Buy</button>
+                </li>
 
-        <!-- STEP 1 -->
-        <li class="flex-1 flex flex-col items-center text-center gap-4">
+                <li data-genre="Classic" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-48 text-white">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Classic</span>
+                        <h3 class="text-base font-semibold mt-1 leading-snug">Don Quixote</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">Miguel de Cervantes</p>
+                    </div>
+                    <button class="mt-auto bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition w-full">Buy</button>
+                </li>
 
-            <div class="w-20 h-20 bg-slate-800 rounded-lg flex justify-center items-center">
-                <span class="text-white text-2xl font-bold">1</span>
-            </div>
+                <li data-genre="Classic" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-48 text-white">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Classic</span>
+                        <h3 class="text-base font-semibold mt-1 leading-snug">The Odyssey</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">Homer</p>
+                    </div>
+                    <button class="mt-auto bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition w-full">Buy</button>
+                </li>
 
-            <h3 class="text-xl font-bold">Browse Books</h3>
+                <li data-genre="Classic" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-48 text-white">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Classic</span>
+                        <h3 class="text-base font-semibold mt-1 leading-snug">Madame Bovary</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">Gustave Flaubert</p>
+                    </div>
+                    <button class="mt-auto bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition w-full">Buy</button>
+                </li>
 
-            <p>
-                Explore our collection of books
-                and discover new stories.
+                <li data-genre="Classic" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-48 text-white">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Classic</span>
+                        <h3 class="text-base font-semibold mt-1 leading-snug">Great Expectations</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">Charles Dickens</p>
+                    </div>
+                    <button class="mt-auto bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition w-full">Buy</button>
+                </li>
+
+                <!-- Sci-Fi (6) -->
+                <li data-genre="Sci-Fi" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-48 text-white">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Sci-Fi</span>
+                        <h3 class="text-base font-semibold mt-1 leading-snug">Dune</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">Frank Herbert</p>
+                    </div>
+                    <button class="mt-auto bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition w-full">Buy</button>
+                </li>
+
+                <li data-genre="Sci-Fi" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-48 text-white">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Sci-Fi</span>
+                        <h3 class="text-base font-semibold mt-1 leading-snug">1984</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">George Orwell</p>
+                    </div>
+                    <button class="mt-auto bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition w-full">Buy</button>
+                </li>
+
+                <li data-genre="Sci-Fi" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-48 text-white">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Sci-Fi</span>
+                        <h3 class="text-base font-semibold mt-1 leading-snug">Brave New World</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">Aldous Huxley</p>
+                    </div>
+                    <button class="mt-auto bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition w-full">Buy</button>
+                </li>
+
+                <li data-genre="Sci-Fi" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-48 text-white">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Sci-Fi</span>
+                        <h3 class="text-base font-semibold mt-1 leading-snug">The Martian</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">Andy Weir</p>
+                    </div>
+                    <button class="mt-auto bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition w-full">Buy</button>
+                </li>
+
+                <li data-genre="Sci-Fi" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-48 text-white">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Sci-Fi</span>
+                        <h3 class="text-base font-semibold mt-1 leading-snug">Ender's Game</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">Orson Scott Card</p>
+                    </div>
+                    <button class="mt-auto bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition w-full">Buy</button>
+                </li>
+
+                <li data-genre="Sci-Fi" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-48 text-white">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Sci-Fi</span>
+                        <h3 class="text-base font-semibold mt-1 leading-snug">Foundation</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">Isaac Asimov</p>
+                    </div>
+                    <button class="mt-auto bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition w-full">Buy</button>
+                </li>
+
+                <!-- Fantasy (6) -->
+                <li data-genre="Fantasy" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-48 text-white">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Fantasy</span>
+                        <h3 class="text-base font-semibold mt-1 leading-snug">The Hobbit</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">J.R.R. Tolkien</p>
+                    </div>
+                    <button class="mt-auto bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition w-full">Buy</button>
+                </li>
+
+                <li data-genre="Fantasy" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-48 text-white">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Fantasy</span>
+                        <h3 class="text-base font-semibold mt-1 leading-snug">Harry Potter and the Philosopher's Stone</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">J.K. Rowling</p>
+                    </div>
+                    <button class="mt-auto bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition w-full">Buy</button>
+                </li>
+
+                <li data-genre="Fantasy" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-48 text-white">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Fantasy</span>
+                        <h3 class="text-base font-semibold mt-1 leading-snug">The Name of the Wind</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">Patrick Rothfuss</p>
+                    </div>
+                    <button class="mt-auto bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition w-full">Buy</button>
+                </li>
+
+                <li data-genre="Fantasy" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-48 text-white">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Fantasy</span>
+                        <h3 class="text-base font-semibold mt-1 leading-snug">A Game of Thrones</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">George R.R. Martin</p>
+                    </div>
+                    <button class="mt-auto bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition w-full">Buy</button>
+                </li>
+
+                <li data-genre="Fantasy" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-48 text-white">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Fantasy</span>
+                        <h3 class="text-base font-semibold mt-1 leading-snug">The Way of Kings</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">Brandon Sanderson</p>
+                    </div>
+                    <button class="mt-auto bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition w-full">Buy</button>
+                </li>
+
+                <li data-genre="Fantasy" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-48 text-white">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Fantasy</span>
+                        <h3 class="text-base font-semibold mt-1 leading-snug">The Lion, the Witch and the Wardrobe</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">C.S. Lewis</p>
+                    </div>
+                    <button class="mt-auto bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition w-full">Buy</button>
+                </li>
+
+                <!-- Romance (6) -->
+                <li data-genre="Romance" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-48 text-white">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Romance</span>
+                        <h3 class="text-base font-semibold mt-1 leading-snug">Pride and Prejudice</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">Jane Austen</p>
+                    </div>
+                    <button class="mt-auto bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition w-full">Buy</button>
+                </li>
+
+                <li data-genre="Romance" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-48 text-white">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Romance</span>
+                        <h3 class="text-base font-semibold mt-1 leading-snug">Jane Eyre</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">Charlotte Brontë</p>
+                    </div>
+                    <button class="mt-auto bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition w-full">Buy</button>
+                </li>
+
+                <li data-genre="Romance" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-48 text-white">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Romance</span>
+                        <h3 class="text-base font-semibold mt-1 leading-snug">Wuthering Heights</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">Emily Brontë</p>
+                    </div>
+                    <button class="mt-auto bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition w-full">Buy</button>
+                </li>
+
+                <li data-genre="Romance" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-48 text-white">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Romance</span>
+                        <h3 class="text-base font-semibold mt-1 leading-snug">The Notebook</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">Nicholas Sparks</p>
+                    </div>
+                    <button class="mt-auto bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition w-full">Buy</button>
+                </li>
+
+                <li data-genre="Romance" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-48 text-white">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Romance</span>
+                        <h3 class="text-base font-semibold mt-1 leading-snug">Outlander</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">Diana Gabaldon</p>
+                    </div>
+                    <button class="mt-auto bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition w-full">Buy</button>
+                </li>
+
+                <li data-genre="Romance" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-48 text-white">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Romance</span>
+                        <h3 class="text-base font-semibold mt-1 leading-snug">Me Before You</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">Jojo Moyes</p>
+                    </div>
+                    <button class="mt-auto bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition w-full">Buy</button>
+                </li>
+
+                <!-- Horror (6) -->
+                <li data-genre="Horror" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-48 text-white">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Horror</span>
+                        <h3 class="text-base font-semibold mt-1 leading-snug">Dracula</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">Bram Stoker</p>
+                    </div>
+                    <button class="mt-auto bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition w-full">Buy</button>
+                </li>
+
+                <li data-genre="Horror" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-48 text-white">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Horror</span>
+                        <h3 class="text-base font-semibold mt-1 leading-snug">Frankenstein</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">Mary Shelley</p>
+                    </div>
+                    <button class="mt-auto bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition w-full">Buy</button>
+                </li>
+
+                <li data-genre="Horror" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-48 text-white">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Horror</span>
+                        <h3 class="text-base font-semibold mt-1 leading-snug">The Shining</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">Stephen King</p>
+                    </div>
+                    <button class="mt-auto bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition w-full">Buy</button>
+                </li>
+
+                <li data-genre="Horror" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-48 text-white">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Horror</span>
+                        <h3 class="text-base font-semibold mt-1 leading-snug">It</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">Stephen King</p>
+                    </div>
+                    <button class="mt-auto bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition w-full">Buy</button>
+                </li>
+
+                <li data-genre="Horror" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-48 text-white">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Horror</span>
+                        <h3 class="text-base font-semibold mt-1 leading-snug">House of Leaves</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">Mark Z. Danielewski</p>
+                    </div>
+                    <button class="mt-auto bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition w-full">Buy</button>
+                </li>
+
+                <li data-genre="Horror" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-48 text-white">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Horror</span>
+                        <h3 class="text-base font-semibold mt-1 leading-snug">Pet Sematary</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">Stephen King</p>
+                    </div>
+                    <button class="mt-auto bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition w-full">Buy</button>
+                </li>
+
+            </ul>
+        </section>
+
+        <!-- How It Works -->
+        <section class="bg-white px-4 py-12 rounded-xl shadow-sm">
+
+            <h2 class="text-3xl font-bold text-center mb-4 text-slate-900">
+                How It Works?
+            </h2>
+
+            <p class="text-center max-w-2xl mx-auto mb-12 text-slate-600">
+                Find your favorite book, explore our collection,
+                and start your reading journey in three simple steps.
             </p>
 
-        </li>
+            <ol class="flex flex-col sm:flex-row items-start sm:items-center justify-evenly gap-8 sm:gap-6 max-w-6xl mx-auto">
 
-        <!-- STEP 2 -->
-        <li class="flex-1 flex flex-col items-center text-center gap-4">
+                <!-- STEP 1 -->
+                <li class="flex-1 flex flex-col items-center text-center gap-4">
+                    <div class="w-20 h-20 bg-amber-600 rounded-lg flex justify-center items-center">
+                        <span class="text-white text-2xl font-bold">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">Browse Books</h3>
+                    <p class="text-slate-600">
+                        Explore our collection of books
+                        and discover new stories.
+                    </p>
+                </li>
 
-            <div class="w-20 h-20 bg-slate-800 rounded-lg rotate-45 flex justify-center items-center">
+                <!-- STEP 2 -->
+                <li class="flex-1 flex flex-col items-center text-center gap-4">
+                    <div class="w-20 h-20 bg-amber-600 rounded-lg rotate-45 flex justify-center items-center">
+                        <span class="text-white text-2xl font-bold -rotate-45">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">Choose a Book</h3>
+                    <p class="text-slate-600">
+                        Select the book that interests
+                        you the most.
+                    </p>
+                </li>
 
-                <span class="text-white text-2xl font-bold -rotate-45">
-                    2
-                </span>
+                <!-- STEP 3 -->
+                <li class="flex-1 flex flex-col items-center text-center gap-4">
+                    <div class="w-20 h-20 bg-amber-600 rounded-full flex justify-center items-center">
+                        <span class="text-white text-2xl font-bold">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">Start Reading</h3>
+                    <p class="text-slate-600">
+                        Get your book and enjoy
+                        your reading journey.
+                    </p>
+                </li>
 
-            </div>
+            </ol>
 
-            <h3 class="text-xl font-bold">Choose a Book</h3>
+        </section>
 
-            <p>
-                Select the book that interests
-                you the most.
-            </p>
-
-        </li>
-
-        <!-- STEP 3 -->
-        <li class="flex-1 flex flex-col items-center text-center gap-4">
-
-            <div class="w-20 h-20 bg-slate-800 rounded-full flex justify-center items-center">
-                <span class="text-white text-2xl font-bold">3</span>
-            </div>
-
-            <h3 class="text-xl font-bold">Start Reading</h3>
-
-            <p>
-                Get your book and enjoy
-                your reading journey.
-            </p>
-
-        </li>
-
-    </ol>
-
-</section>
     </main>
-    <footer class="flex justify-center items-center p-4 bg-amber-800 text-white flex-1">
-        <p>&copy; 2026 Exceptional Team, All rights reserved.</p>        
+
+    <footer class="flex justify-center items-center p-4 bg-slate-900 text-slate-400 flex-shrink-0">
+        <p>&copy; 2026 Exceptional Team, All rights reserved.</p>
     </footer>
+
+    <script>
+        const checkboxes = document.querySelectorAll('#filter-list input[type="checkbox"]');
+        const books = document.querySelectorAll('#book-list li');
+
+        function applyFilter() {
+            const active = new Set(
+                [...checkboxes].filter(cb => cb.checked).map(cb => cb.value)
+            );
+            books.forEach(li => {
+                li.style.display = active.has(li.dataset.genre) ? '' : 'none';
+            });
+        }
+
+        checkboxes.forEach(cb => cb.addEventListener('change', applyFilter));
+
+        document.getElementById('clear-filters').addEventListener('click', () => {
+            checkboxes.forEach(cb => cb.checked = false);
+            applyFilter();
+        });
+
+        document.getElementById('select-all-filters').addEventListener('click', () => {
+            checkboxes.forEach(cb => cb.checked = true);
+            applyFilter();
+        });
+    </script>
 </body>
 </html>
