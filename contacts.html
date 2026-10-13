@@ -1,188 +1,382 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8"/>
-        <title>Contacts | Flexus open library</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                color: #333;
-                background-color: #fff;
-                margin: 0;
-                padding: 40px 20px;
-            }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts — Flexus</title>
+    <link rel="stylesheet" href="./css/output.css">
+</head>
+<body class="flex min-h-screen flex-col bg-stone-50 text-stone-800">
+<header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex min-h-20 flex-wrap items-center justify-between gap-4">
 
-            .container {
-                max-width: 1140px;
-                margin: 0 auto;
-            }
+        <a href="index.html" class="flex items-center space-x-2 md:space-x-3">
+            <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-amber-600">
+                <svg class="h-5 w-5" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.25m3-14.208A8.967 8.967 0 0118 3.75c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18c-2.305 0-4.408.867-6 2.25m0-14.208v14.25"/>
+                </svg>
+            </span>
+            <span class="text-lg md:text-xl font-bold tracking-tight text-slate-900">Flexus</span>
+        </a>
 
-            h1.text-red {
-                color: #d32f2f;
-                font-size: 28px;
-                margin-bottom: 24px;
-                border-bottom: 2px solid #eee;
-                padding-bottom: 12px;
-            }
+        <input type="checkbox" id="menu-toggle" class="peer hidden">
 
-            .row {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 30px;
-            }
+        <label for="menu-toggle" class="ml-auto cursor-pointer p-1 md:hidden" aria-label="Open menu">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+        </label>
 
-            .col-map {
-                flex: 1;
-                min-width: 350px;
-            }
+        <nav class="hidden w-full flex-col gap-4 peer-checked:flex md:flex md:w-auto md:flex-row md:items-center md:gap-6 lg:gap-8 text-sm font-medium text-slate-600 bg-stone-50 md:bg-transparent">
+            <a href="index.html" class="hover:text-blue-600 transition">Home</a>
+            <a href="catalog.html" class="hover:text-blue-600 transition">Catalog</a>
+            <a href="about_us.html" class="hover:text-blue-600 transition">About Us</a>
+            <a href="contacts.html" class="hover:text-blue-600 transition">Contacts</a>
+            <a href="basket.html" class="md:hidden text-amber-600 font-semibold" aria-current="page">Basket</a>
+        </nav>
 
-            .col-info {
-                flex: 1;
-                min-width: 350px;
-            }
+        <a href="basket.html" class="hidden md:inline-block bg-amber-600 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-lg text-xs md:text-sm font-medium shadow-sm transition hover:bg-amber-700" aria-current="page">Basket</a>
 
-            iframe {
-                width: 100%;
-                height: 600px;
-                border: 0;
-            }
+    </div>
+</header>
+<main class="mx-auto w-full max-w-7xl flex-1 px-4 py-8 sm:px-6 lg:px-8">
+    <h1 class="text-3xl font-bold">Contacts</h1>
 
-            .contact-list {
-                list-style: none;
-                padding: 0;
-                margin: 0 0 30px 0;
-                line-height: 1.8;
-            }
+    <p class="mt-2 text-sm text-slate-500">
+        Get in touch with our library team.
+    </p>
 
-            .contact-list li {
-                margin-bottom: 8px;
-            }
 
-            .contact-list strong {
-                color: #d32f2f;
-            }
 
-            .contact-list a {
-                color: #0066cc;
-                text-decoration: none;
-            }
+    <section class="mt-6 rounded-2xl border border-stone-200 bg-white p-5 shadow-sm sm:p-6">
 
-            .contact-list a:hover {
-                text-decoration: underline;
-            }
 
-            .form-row {
-                display: flex;
-                gap: 15px;
-                margin-bottom: 15px;
-            }
+        <h2 class="text-xl font-semibold text-slate-900">
+            Library Administration
+        </h2>
 
-            .form-group {
-                flex: 1;
-                display: flex;
-                flex-direction: column;
-            }
+        <div class="mt-4">
+            <h3 class="font-medium text-slate-800">
+                John Doe
+            </h3>
+            <p class="text-sm text-stone-500">
+                Library Director
+            </p>
+        </div>
+        <ul class="mt-4 space-y-2 text-sm text-slate-700">
+            <li>
+                <strong>Phone:</strong>
+                <a href="tel:+15550101001"
+                   class="ml-1 text-amber-700 hover:text-amber-800">
+                    +1 (555) 010-1001
+                </a>
+            </li>
+            <li>
+                <strong>E-mail:</strong>
+                <a href="mailto:director@fol.kz"
+                   class="ml-1 text-amber-700 hover:text-amber-800">
+                    director@fol.kz
+                </a>
+            </li>
+            <li>
+                <strong>Office hours:</strong>
+                Monday–Friday, 10:00–17:00
+            </li>
+        </ul>
 
-            .form-group.full-width {
-                width: 100%;
-            }
+        <div class="mt-4">
+            <h3 class="font-medium text-slate-800">
+                Miss Shelly
+            </h3>
+            <p class="text-sm text-stone-500">
+                Associate Library Director
+            </p>
+        </div>
+        <ul class="mt-4 space-y-2 text-sm text-slate-700">
+            <li>
+                <strong>Phone:</strong>
+                <a href="tel:+15550101001"
+                   class="ml-1 text-amber-700 hover:text-amber-800">
+                    +3 (044) 112-0230
+                </a>
+            </li>
+            <li>
+                <strong>E-mail:</strong>
+                <a href="mailto:director@fol.kz"
+                   class="ml-1 text-amber-700 hover:text-amber-800">
+                    msshelly@fol.kz
+                </a>
+            </li>
+            <li>
+                <strong>Office hours:</strong>
+                Monday–Friday, 10:00–17:00
+            </li>
+        </ul>
 
-            label {
-                font-size: 14px;
-                color: #555;
-                margin-bottom: 5px;
-            }
+    </section>
 
-            .form-control {
-                padding: 10px 12px;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                font-size: 14px;
-                outline: none;
-                transition: border-color 0.2s;
-            }
 
-            .form-control:focus {
-                border-color: #d32f2f;
-            }
+    <section class="mt-4 rounded-2xl border border-stone-200 bg-white p-5 shadow-sm sm:p-6">
+        <h2 class="text-xl font-semibold text-slate-900">
+            Reader Support
+        </h2>
+        <div class="mt-4">
+            <h3 class="font-medium text-slate-800">
+                Jamie Taylor
+            </h3>
+            <p class="text-sm text-stone-500">
+                Reader Services Specialist
+            </p>
+        </div>
+        <ul class="mt-4 space-y-2 text-sm text-slate-700">
+            <li>
+                <strong>Phone:</strong>
+                <a href="tel:+15550101002"
+                   class="ml-1 text-amber-700 hover:text-amber-800">
+                    +1 (555) 010-1002
+                </a>
+            </li>
+            <li>
+                <strong>E-mail:</strong>
+                <a href="mailto:readers@fol.kz"
+                   class="ml-1 text-amber-700 hover:text-amber-800">
+                    readers@fol.kz
+                </a>
+            </li>
+            <li>
+                <strong>Office hours:</strong>
+                Tuesday–Saturday, 11:00–18:00
+            </li>
+        </ul>
+    </section>
 
-            textarea.form-control {
-                resize: vertical;
-                min-height: 100px;
-            }
+    <section class="mt-4 rounded-2xl border border-stone-200 bg-white p-5 shadow-sm sm:p-6">
+        <h2 class="text-xl font-semibold text-slate-900">
+            Security Service
+        </h2>
+        <div class="mt-4">
+            <h3 class="font-medium text-slate-800">
+                Michael Ehrmantraut
+            </h3>
+            <p class="text-sm text-stone-500">
+                Head of the Security Service
+            </p>
+        </div>
+        <ul class="mt-4 space-y-2 text-sm text-slate-700">
+            <li>
+                <strong>Phone:</strong>
+                <a href="tel:+15550101002"
+                   class="ml-1 text-amber-700 hover:text-amber-800">
+                    +1 (555) 010-1002
+                </a>
+            </li>
+            <li>
+                <strong>E-mail:</strong>
+                <a href="mailto:readers@fol.kz"
+                   class="ml-1 text-amber-700 hover:text-amber-800">
+                    readers@fol.kz
+                </a>
+            </li>
+            <li>
+                <strong>Office hours:</strong>
+                Tuesday–Saturday, 11:00–18:00
+            </li>
+        </ul>
+    </section>
 
-            .btn-red {
-                background-color: #d32f2f;
-                color: #fff;
-                border: none;
-                padding: 12px 24px;
-                font-size: 15px;
-                font-weight: bold;
-                border-radius: 4px;
-                cursor: pointer;
-                display: inline-flex;
-                align-items: center;
-                gap: 8px;
-                transition: background-color 0.2s;
-            }
 
-            .btn-red:hover {
-                background-color: #b71c1c;
-            }
-        </style>
-    </head>
 
-    <body class="pages contacts">
-        <div class="container">
-            <h1 class="text-red">Contacts</h1>
+    <section class="mt-8 rounded-2xl border border-stone-200 bg-white p-5 shadow-sm sm:p-6 lg:p-8">
+        <h2 class="text-2xl font-bold text-slate-900">
+            Contact Us
+        </h2>
+        <p class="mt-3 max-w-3xl text-sm leading-6 text-slate-600 sm:text-base">
+            Would you like to ask a question or contact us?
+            Write us a message and specify your contact email address.
+        </p>
 
-            <div class="row">
-                <div class="col-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d288.43085591016177!2d-106.53660995729449!3d35.126119229044036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87227557938908eb%3A0x723dd3cf63dbb051!2zMzgyOCBQaWVybW9udCBEciBORSwgQWxidXF1ZXJxdWUsIE5NIDg3MTExLCDQodCo0JA!5e0!3m2!1sru!2skz!4v1791832322395!5m2!1sru!2skz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+        <div class="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
+
+
+            <div class="min-w-0">
+
+                <h3 class="mb-3 text-lg font-semibold text-slate-800">
+                    Find Us
+                </h3>
+                <div class="w-full overflow-hidden rounded-xl border border-stone-200">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d288.43085591016177!2d-106.53660995729449!3d35.126119229044036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87227557938908eb%3A0x723dd3cf63dbb051!2zMzgyOCBQaWVybW9udCBEciBORSwgQWxidXF1ZXJxdWUsIE5NIDg3MTExLCDQodCo0JA!5e0!3m2!1sru!2skz!4v1791832322395!5m2!1sru!2skz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
+                        title="Library location on Google Maps"
+                        class="block aspect-square w-full"
+                        style="border: 0;"
+                        allowfullscreen
+                        loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin">
+                    </iframe>
                 </div>
 
-                <div class="col-info">
-                    <ul class="contact-list">
-                        <li><strong>Address:</strong> 3828 Piermont Dr NE, Albuquerque, NM 87111, USA</li>
-                        <li><strong>Phone:</strong> 555-0179</li>
-                        <li><strong>e-mail:</strong> <a href="mailto:bfu@bfu.bg">fol@fol.kz</a></li>
-                    </ul>
+                <div class="mt-4 rounded-xl bg-stone-100 p-4">
 
-                    <form id="feedback" action="#" method="post">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="first_name">Name</label>
-                                <input type="text" class="form-control" id="first_name" name="first_name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">E-mail</label>
-                                <input type="email" class="form-control" id="email" name="email" required>
-                            </div>
-                        </div>
+                    <h4 class="font-semibold text-slate-800">
+                        Our Address
+                    </h4>
 
-                        <div class="form-row">
-                            <div class="form-group full-width">
-                                <label for="title">Subject</label>
-                                <input type="text" class="form-control" id="title" name="title" required>
-                            </div>
-                        </div>
+                    <p class="mt-2 text-sm leading-6 text-slate-600">
+                        3828 Piermont Dr NE,
+                        Albuquerque, NM 87111, USA
+                    </p>
 
-                        <div class="form-row">
-                            <div class="form-group full-width">
-                                <label for="comment">Message</label>
-                                <textarea name="comment" class="form-control" id="comment" rows="4" required></textarea>
-                            </div>
-                        </div>
+                    <p class="mt-2 text-sm text-slate-600">
+                        Phone:
+                        <a href="tel:+15550179"
+                           class="text-amber-700 hover:underline">
+                            555-0179
+                        </a>
+                    </p>
 
-                        <div class="contacts-controls">
-                            <button type="submit" name="submit_form" class="btn-red">
-                                Send an inquiry <span>&rarr;</span>
-                            </button>
-                        </div>
-                    </form>
+                    <p class="mt-1 text-sm text-slate-600">
+                        E-mail:
+                        <a href="mailto:fol@fol.kz"
+                           class="text-amber-700 hover:underline">
+                            fol@fol.kz
+                        </a>
+                    </p>
+
                 </div>
+
+            </div>
+
+
+
+            <div class="min-w-0">
+
+                <h3 class="mb-2 text-lg font-semibold text-slate-800">
+                    Send an Inquiry
+                </h3>
+
+                <p class="mb-5 text-sm leading-6 text-slate-500">
+                    Заполните поля ниже, и мы сможем связаться с вами.
+                </p>
+
+
+                <form id="feedback" action="#" method="post" class="space-y-5">
+
+
+                    <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+
+                        <div>
+                            <label for="first_name"
+                                   class="mb-2 block text-sm font-medium text-slate-700">
+                                Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="first_name"
+                                name="first_name"
+                                autocomplete="name"
+                                placeholder="Your name"
+                                required
+                                class="w-full rounded-lg border border-stone-300 bg-stone-100 px-4 py-3 text-sm text-slate-900 placeholder:text-stone-400 focus:border-amber-600 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-200">
+                        </div>
+
+
+                        <div>
+                            <label for="email"
+                                   class="mb-2 block text-sm font-medium text-slate-700">
+                                E-mail
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                autocomplete="email"
+                                placeholder="you@fol.kz"
+                                required
+                                class="w-full rounded-lg border border-stone-300 bg-stone-100 px-4 py-3 text-sm text-slate-900 placeholder:text-stone-400 focus:border-amber-600 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-200">
+                        </div>
+
+                    </div>
+
+
+                    <div>
+                        <label for="title"
+                               class="mb-2 block text-sm font-medium text-slate-700">
+                            Subject
+                        </label>
+
+                        <input
+                            type="text"
+                            id="title"
+                            name="title"
+                            placeholder="What is your question about?"
+                            required
+                            class="w-full rounded-lg border border-stone-300 bg-stone-100 px-4 py-3 text-sm text-slate-900 placeholder:text-stone-400 focus:border-amber-600 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-200">
+                    </div>
+
+
+                    <div>
+                        <label for="comment"
+                               class="mb-2 block text-sm font-medium text-slate-700">
+                            Message
+                        </label>
+
+                        <textarea
+                            id="comment"
+                            name="comment"
+                            rows="5"
+                            placeholder="Write your message here..."
+                            required
+                            class="w-full resize-y rounded-lg border border-stone-300 bg-stone-100 px-4 py-3 text-sm text-slate-900 placeholder:text-stone-400 focus:border-amber-600 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-200">
+                        </textarea>
+                    </div>
+
+
+                    <div class="pt-1">
+
+                        <button
+                            type="submit"
+                            name="submit_form"
+                            class="inline-flex items-center justify-center gap-2 rounded-lg bg-amber-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2">
+
+                            Send an inquiry
+
+                            <span aria-hidden="true">&rarr;</span>
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+<footer class="mt-auto bg-slate-900 text-slate-400 py-10 md:py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <div class="text-white font-bold text-base md:text-lg mb-2 md:mb-3 flex items-center space-x-2">
+                    <span>📚</span> <span>Library</span>
+                </div>
+                <p class="text-xs md:text-sm">Cultural center of your city.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-2 md:mb-3 text-xs md:text-sm uppercase tracking-wider">Opening Hours</h4>
+                <p class="text-xs md:text-sm mb-1">Tue – Fri: 10:00 – 20:00</p>
+                <p class="text-xs md:text-sm">Sat – Sun: 11:00 – 18:00</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-2 md:mb-3 text-xs md:text-sm uppercase tracking-wider">Contacts</h4>
+                <p class="text-xs md:text-sm mb-1">42 Knizhnaya Street</p>
+                <p class="text-xs md:text-sm">Phone: +7 (XXX) XXX-XX-XX</p>
             </div>
         </div>
-    </body>
+</footer>
+</body>
 </html>
