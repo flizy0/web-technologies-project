@@ -39,5 +39,115 @@
 
     </div>
 </header>
+<main class="mx-auto w-full max-w-7xl flex-1 px-4 py-8">
+    <h1 class="text-3xl font-bold">Shopping Basket</h1>
+    <section class="mt-6" >      
+        <ul class="divide-y divide-stone-200 rounded-xl bg-white shadow-sm">
+
+            <li>
+                <article class="flex flex-col gap-4 p-4 sm:flex-row sm:items-center">
+                    <img src="./books_photos/hobbit.jpg" alt="The Hobbit — book cover" class="h-24 w-16 shrink-0 rounded-lg object-cover">    
+                    <div class="min-w-0 flex-1">
+                        <h2 class="font-semibold">The Hobbit</h2>
+                        <p class="text-sm text-stone-500">J.R.R. Tolkien · Hardcover</p>
+                        <p class="mt-1 font-semibold text-amber-700">$19.99</p>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-x-6 gap-y-2 sm:ml-auto">
+                        <div class="flex items-center rounded-lg border border-stone-300">
+                            <button type="button" class="px-3 py-1 text-stone-500 transition hover:text-stone-900">−</button>
+                            <span class=" font-medium">2</span>
+                            <button type="button" class="px-3 py-1 text-stone-500 transition hover:text-stone-900">+</button>
+                        </div>
+                        <span class="w-20 text-right font-semibold">$39.98</span>
+                        <button type="button" class="text-sm text-red-600 transition hover:text-red-700 hover:underline">Remove</button>
+                    </div>
+                </article>
+            </li>
+                        <li>
+                <article class="flex flex-col gap-4 p-4 sm:flex-row sm:items-center">
+                    <img src="./books_photos/Dune.jpg" alt="Dune" class="h-24 w-16 shrink-0 rounded-lg object-cover">    
+                    <div class="min-w-0 flex-1">
+                        <h2 class="font-semibold">Dune</h2>
+                        <p class="text-sm text-stone-500">Frank Herbert · Paperback</p>
+                        <p class="mt-1 font-semibold text-amber-700">$15.00</p>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-x-6 gap-y-2 sm:ml-auto">
+                        <div class="flex items-center rounded-lg border border-stone-300">
+                            <button type="button" class="px-3 py-1 text-stone-500 transition hover:text-stone-900">−</button>
+                            <span class=" font-medium">1</span>
+                            <button type="button" class="px-3 py-1 text-stone-500 transition hover:text-stone-900">+</button>
+                        </div>
+                        <span class="w-20 text-right font-semibold">$15.00</span>
+                        <button type="button" class="text-sm text-red-600 transition hover:text-red-700 hover:underline">Remove</button>
+                    </div>
+                </article>
+            </li>
+                        </li>
+                        <li>
+                <article class="flex flex-col gap-4 p-4 sm:flex-row sm:items-center">
+                    <img src="./books_photos/Atomic_Habbits.jpg" alt="Dune" class="h-24 w-16 shrink-0 rounded-lg object-cover">    
+                    <div class="min-w-0 flex-1">
+                        <h2 class="font-semibold">Atomic Habits</h2>
+                        <p class="text-sm text-stone-500">James Clear · Paperback</p>
+                        <p class="mt-1 font-semibold text-amber-700">$12.50</p>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-x-6 gap-y-2 sm:ml-auto">
+                        <div class="flex items-center rounded-lg border border-stone-300">
+                            <button type="button" class="px-3 py-1 text-stone-500 transition hover:text-stone-900">−</button>
+                            <span class=" font-medium">1</span>
+                            <button type="button" class="px-3 py-1 text-stone-500 transition hover:text-stone-900">+</button>
+                        </div>
+                        <span class="w-20 text-right font-semibold">$12.50</span>
+                        <button type="button" class="text-sm text-red-600 transition hover:text-red-700 hover:underline">Remove</button>
+                    </div>
+                </article>
+            </li>
+
+        </ul>
+    </section>
+
+    <section class="mt-10 flex flex-col  items-left ">
+        <a href="catalog.html" class="mt-6 inline-block font-medium text-amber-700 transition hover:text-amber-800 hover:underline">← Continue shopping</a>
+        <div class="mt-8 rounded-xl bg-white p-6 w-full max-w-sm shadow-sm">
+            <h2 class="text-lg font-bold">Order Summary</h2>
+            <dl class="mt-4 space-y-3 text-sm">
+                <div class="flex justify-between">
+                    <dt class="text-stone-500">Subtotal</dt>
+                    <dd class="font-medium">$67.48</dd>
+                </div>
+                <div class="flex justify-between">
+                    <dt class="text-stone-500">Shipping</dt>
+                    <dd class="font-medium">$5.00</dd>
+                </div>
+            </dl>
+            <div class="flex justify-between border-t border-stone-200 pt-3 mt-1 text-base font-bold">
+                <dt >Total</dt>
+                <dt >$72.48</dt>
+            </div>
+            <button type="button" class="mt-5 w-full rounded-lg bg-amber-600 px-6 py-3 font-semibold text-white transition hover:bg-amber-700">Proceed to Checkout</button>
+        </div>
+
+    </section>
+</main>
+<footer class="mt-auto bg-slate-900 text-slate-400 py-10 md:py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <div class="text-white font-bold text-base md:text-lg mb-2 md:mb-3 flex items-center space-x-2">
+                    <span>📚</span> <span>Library</span>
+                </div>
+                <p class="text-xs md:text-sm">Cultural center of your city.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-2 md:mb-3 text-xs md:text-sm uppercase tracking-wider">Opening Hours</h4>
+                <p class="text-xs md:text-sm mb-1">Tue – Fri: 10:00 – 20:00</p>
+                <p class="text-xs md:text-sm">Sat – Sun: 11:00 – 18:00</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-2 md:mb-3 text-xs md:text-sm uppercase tracking-wider">Contacts</h4>
+                <p class="text-xs md:text-sm mb-1">42 Knizhnaya Street</p>
+                <p class="text-xs md:text-sm">Phone: +7 (XXX) XXX-XX-XX</p>
+            </div>
+        </div>
+</footer>
 </body>
 </html>
