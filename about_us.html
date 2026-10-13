@@ -1,39 +1,52 @@
-<!--Пока что НЕ ИТОГОВАЯ версия все цвета и стилистику подстроем под кого то-->
-<!-- By the way еще НЕ ЗАКОНЧЕНО-->
-<!-- И я тэйлвинд еще не установила через CND подключила-->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwind.js"></script>
     <title>Document</title>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased">
     <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        <div class="flex items-center space-x-2 md:space-x-3">
-            <span class="text-2xl md:text-3xl"></span>
-            <span class="text-lg md:text-xl font-bold tracking-tight text-slate-900">Flexus</span>
-        </div>
-        <nav class="hidden md:flex space-x-6 lg:space-x-8 text-sm font-medium text-slate-600">
-            <a href="#" class="hover:text-blue-600 transition">Главная</a>
-            <a href="#" class="hover:text-blue-600 transition">Каталог</a>
-            <a href="#" class="text-amber-600 font-semibold">О нас</a>
-            <a href="#" class="hover:text-amber-600 transition">Контакты</a>
-        </nav>
-        <a href="#" class="bg-amber-600 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-lg text-xs md:text-sm font-medium hover:bg-blue-700 transition shadow-sm">Корзина</a>
-        </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex min-h-20 flex-wrap items-center justify-between gap-4">
 
-    </header>
+        <a href="index.html" class="flex items-center space-x-2 md:space-x-3">
+            <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-amber-600">
+                <svg class="h-5 w-5" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.25m3-14.208A8.967 8.967 0 0118 3.75c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18c-2.305 0-4.408.867-6 2.25m0-14.208v14.25"/>
+                </svg>
+            </span>
+            <span class="text-lg md:text-xl font-bold tracking-tight text-slate-900">Flexus</span>
+        </a>
+
+        <input type="checkbox" id="menu-toggle" class="peer hidden">
+
+        <label for="menu-toggle" class="ml-auto cursor-pointer p-1 md:hidden" aria-label="Open menu">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+        </label>
+
+        <nav class="hidden w-full flex-col gap-4 peer-checked:flex md:flex md:w-auto md:flex-row md:items-center md:gap-6 lg:gap-8 text-sm font-medium text-slate-600 bg-stone-50 md:bg-transparent">
+            <a href="index.html" class="hover:text-blue-600 transition">Home</a>
+            <a href="catalog.html" class="hover:text-blue-600 transition">Catalog</a>
+            <a href="about_us.html" class="hover:text-blue-600 transition">About Us</a>
+            <a href="contacts.html" class="hover:text-blue-600 transition">Contacts</a>
+            <a href="basket.html" class="md:hidden text-amber-600 font-semibold" aria-current="page">Basket</a>
+        </nav>
+
+        <a href="basket.html" class="hidden md:inline-block bg-amber-600 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-lg text-xs md:text-sm font-medium shadow-sm transition hover:bg-amber-700" aria-current="page">Basket</a>
+
+    </div>
+</header>
+
 <section class="bg-gradient-to-b from-amber-900 to-gold-900 text-white py-12 md:py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4 md:mb-6 leading-tight">
-                Пространство для чтения и знаний
+                A safe space for knowledge and books
             </h1>
             <p class="text-sm sm:text-base md:text-xl text-brown-200 max-w-2xl md:max-w-3xl mx-auto leading-relaxed">
-                Наша библиотека — это современный культурный центр, открытый для каждого, кто ищет идеи и вдохновение.
+                Our library is a modern cultural center, open to everyone seeking ideas and inspiration.
             </p>
         </div>
     </section>
@@ -43,19 +56,19 @@
         <div class="bg-white rounded-2xl shadow-xl grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 p-6 md:p-8 text-center border border-slate-100">
             <div>
                 <div class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-amber-600 mb-1">50k+</div>
-                <div class="text-xs md:text-sm text-slate-500 font-medium">Книг в каталоге</div>
+                <div class="text-xs md:text-sm text-slate-500 font-medium">Books in catalog</div>
             </div>
             <div>
                 <div class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-amber-600 mb-1">12k</div>
-                <div class="text-xs md:text-sm text-slate-500 font-medium">Читателей</div>
+                <div class="text-xs md:text-sm text-slate-500 font-medium">Readers</div>
             </div>
             <div>
                 <div class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-amber-600 mb-1">15+</div>
-                <div class="text-xs md:text-sm text-slate-500 font-medium">Клубов</div>
+                <div class="text-xs md:text-sm text-slate-500 font-medium">Clubs</div>
             </div>
             <div>
                 <div class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-amber-600 mb-1">1954</div>
-                <div class="text-xs md:text-sm text-slate-500 font-medium">Основание</div>
+                <div class="text-xs md:text-sm text-slate-500 font-medium">Founded</div>
             </div>
 
     </div>
@@ -64,22 +77,22 @@
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
             <div>
-                <span class="text-amber-500 font-semibold text-xs md:text-sm uppercase tracking-wider">Наша миссия</span>
-                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2 mb-3 md:mb-4">Делаем литературу доступной абсолютно каждому</h2>
-                <p class="text-sm md:text-base text-slate-600 leading-relaxed mb-6">Мы создаем правильную атмосферу для учебы и досуга. 
-                    В наших архивах доступны книги абсолютно любых жанров: Романтика, Фэнтези, Детективы, Научная фантастика и многое другое.
+                <span class="text-amber-500 font-semibold text-xs md:text-sm uppercase tracking-wider">Our mission</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2 mb-3 md:mb-4">Making literature accessible to absolutely everyone.</h2>
+                <p class="text-sm md:text-base text-slate-600 leading-relaxed mb-6">We create the right atmosphere for study and leisure. 
+Our archives offer books across a wide range of genres: romance, fantasy, detective fiction, science fiction, and much more.
                 </p>
                 <ul class="space-y-2.5 text-sm md:text-base text-slate-700 font-medium">
                     <li class="flex items-center space-x-3">
-                        <span class="text-amber-600 font-bold">Электронные базы данных</span>
+                        <span class="text-amber-600 font-bold">Digital base systems</span>
                     </li>
                     <li class="flex items-center space-x-3">
-                        <span class="text-amber-600 font-bold">Тихие зоны для работы</span>
+                        <span class="text-amber-600 font-bold">Quiet zones for work</span>
                     </li>
                 </ul>
             </div>
             <div class="bg-amber-100 rounded-2xl h-64 lg:h-80 flex items-center justify-center text-amber-500 font-medium text-sm md:text-base border border-amber-200">
-                <span>[Фото здания]</span>
+                <img src="library.jpg" class="w-full h-full object-cover">
             </div>
         </div>
     </section>
@@ -87,27 +100,27 @@
     <section class="bg-white py-12 md:py-16 border-y border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-10 md:mb-12">
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2 mb-3 md:mb-4">Почему выбирают нас</h2>
-            <p class="text-sm md:text-base text-slate-600">Современный сервис в сочетании с традиционным уютом.</p>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2 mb-3 md:mb-4">Why everyone choose US?</h2>
+            <p class="text-sm md:text-base text-slate-600">Modern service combined with traditional coziness.</p>
 
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             <div class="bg-slate-50 p-6 md:p-8 rounded-xl border border-slate-100">
                 <div class="text-2xl md:text-3xl mb-3">💻</div>
-                <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-2">Медиатека</h3>
-                <p class="text-slate-600 text-xs md:text-xs leading-relaxed">Доступ к ПК, интернету и оцифрованным архивам</p>
+                <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-2">Mediateka</h3>
+                <p class="text-slate-600 text-xs md:text-xs leading-relaxed">Access to PCs, the Internet, and digitized archives</p>
         
             </div>
             <div class="bg-slate-50 p-6 md:p-8 rounded-xl border border-slate-100">
                 <div class="text-2xl md:text-3xl mb-3">☕</div>
-                <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-2">Зона отдыха</h3>
-                <p class="text-slate-600 text-xs md:text-xs leading-relaxed">Уютные пуфики, кофейный уголок и комфортные места</p>
+                <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-2">Recreation area</h3>
+                <p class="text-slate-600 text-xs md:text-xs leading-relaxed">Cozy poufs, a coffee corner, and comfortable seating.</p>
 
             </div>
             <div class="bg-slate-50 p-6 md:p-8 rounded-xl border border-slate-100">
                 <div class="text-2xl md:text-3xl mb-3">👶</div>
-                <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-2">Детский отдел</h3>
-                <p class="text-slate-600 text-xs md:text-xs leading-relaxed">Обширный спектр развивающих книг и безопасное пространство</p>
+                <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-2">Children's Department</h3>
+                <p class="text-slate-600 text-xs md:text-xs leading-relaxed">A wide range of educational books and a safe space</p>
             </div>
 
         </div>
@@ -119,19 +132,19 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
                 <div class="text-white font-bold text-base md:text-lg mb-2 md:mb-3 flex items-center space-x-2">
-                    <span>📚</span> <span>Библиотека</span>
+                    <span>📚</span> <span>Library</span>
                 </div>
-                <p class="text-xs md:text-sm">Культурный центр вашего города.</p>
+                <p class="text-xs md:text-sm">Your city's cultural center.</p>
             </div>
             <div>
-                <h4 class="text-white font-semibold mb-2 md:mb-3 text-xs md:text-sm uppercase tracking-wider">Режим работы</h4>
-                <p class="text-xs md:text-sm mb-1">Вт – Пт: 10:00 – 20:00</p>
-                <p class="text-xs md:text-sm">Сб – Вс: 11:00 – 18:00</p>
+                <h4 class="text-white font-semibold mb-2 md:mb-3 text-xs md:text-sm uppercase tracking-wider">Working Hours</h4>
+                <p class="text-xs md:text-sm mb-1">Tue – Fri: 10:00 – 20:00</p>
+                <p class="text-xs md:text-sm">Sat – Sun: 11:00 – 18:00</p>
             </div>
             <div>
-                <h4 class="text-white font-semibold mb-2 md:mb-3 text-xs md:text-sm uppercase tracking-wider">Контакты</h4>
-                <p class="text-xs md:text-sm mb-1">ул. Книжная, 42</p>
-                <p class="text-xs md:text-sm">Телефон: +7 (XXX) XXX-XX-XX</p>
+                <h4 class="text-white font-semibold mb-2 md:mb-3 text-xs md:text-sm uppercase tracking-wider">Contacts</h4>
+                <p class="text-xs md:text-sm mb-1">42 Knizhnaya St.</p>
+                <p class="text-xs md:text-sm">Phone: +7 (XXX) XXX-XX-XX</p>
             </div>
         </div>
     </footer>
@@ -139,3 +152,5 @@
 </body>
 </html>
 
+
+    </header>-->
