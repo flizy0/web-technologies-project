@@ -35,52 +35,49 @@
 </header>
     <main class="flex flex-col bg-amber-50 p-4 sm:p-6 lg:p-8 space-y-6 flex-1">
         <p class="text-center text-2xl text-slate-900">Explore our wide range of books and find what suits your needs.</p>
-        <section class="flex flex-col lg:flex-row bg-white rounded-xl shadow-sm p-4 gap-4">
-            <aside class="lg:flex-1 bg-amber-900 rounded-lg p-6 text-white flex flex-col gap-4">
+        <section class="group flex flex-col lg:flex-row bg-white rounded-xl shadow-sm p-4 gap-4">
+            <aside class="lg:flex-1 bg-slate-900 rounded-lg p-6 text-white flex flex-col gap-4 shadow-sm">
                 <h2 class="text-lg font-bold tracking-wide">Filter by Genre</h2>
-                <ul class="flex flex-col gap-3" id="filter-list">
-                    <li>
-                        <label class="flex items-center gap-3 cursor-pointer select-none">
-                            <input type="checkbox" value="Classic" checked class="w-4 h-4 accent-amber-400 cursor-pointer">
-                            <span class="font-medium">Classic</span>
-                        </label>
-                    </li>
-                    <li>
-                        <label class="flex items-center gap-3 cursor-pointer select-none">
-                            <input type="checkbox" value="Sci-Fi" checked class="w-4 h-4 accent-amber-400 cursor-pointer">
-                            <span class="font-medium">Sci-Fi</span>
-                        </label>
-                    </li>
-                    <li>
-                        <label class="flex items-center gap-3 cursor-pointer select-none">
-                            <input type="checkbox" value="Fantasy" checked class="w-4 h-4 accent-amber-400 cursor-pointer">
-                            <span class="font-medium">Fantasy</span>
-                        </label>
-                    </li>
-                    <li>
-                        <label class="flex items-center gap-3 cursor-pointer select-none">
-                            <input type="checkbox" value="Romance" checked class="w-4 h-4 accent-amber-400 cursor-pointer">
-                            <span class="font-medium">Romance</span>
-                        </label>
-                    </li>
-                    <li>
-                        <label class="flex items-center gap-3 cursor-pointer select-none">
-                            <input type="checkbox" value="Horror" checked class="w-4 h-4 accent-amber-400 cursor-pointer">
-                            <span class="font-medium">Horror</span>
-                        </label>
-                    </li>
-                </ul>
-                <button id="clear-filters"
-                    class="mt-auto text-sm text-amber-300 hover:text-white underline text-left transition">
-                    Clear all
-                </button>
-                <button id="select-all-filters"
-                    class="text-sm text-amber-300 hover:text-white underline text-left transition">
-                    Select all
-                </button>
+                <form class="flex flex-col flex-1 justify-between gap-4">
+                    <ul class="flex flex-col gap-3" id="filter-list">
+                        <li>
+                            <label class="flex items-center gap-3 cursor-pointer select-none">
+                                <input type="checkbox" id="filter-classic" checked class="w-4 h-4 accent-amber-400 cursor-pointer">
+                                <span class="font-medium">Classic</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="flex items-center gap-3 cursor-pointer select-none">
+                                <input type="checkbox" id="filter-scifi" class="w-4 h-4 accent-amber-400 cursor-pointer">
+                                <span class="font-medium">Sci-Fi</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="flex items-center gap-3 cursor-pointer select-none">
+                                <input type="checkbox" id="filter-fantasy" class="w-4 h-4 accent-amber-400 cursor-pointer">
+                                <span class="font-medium">Fantasy</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="flex items-center gap-3 cursor-pointer select-none">
+                                <input type="checkbox" id="filter-romance" class="w-4 h-4 accent-amber-400 cursor-pointer">
+                                <span class="font-medium">Romance</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="flex items-center gap-3 cursor-pointer select-none">
+                                <input type="checkbox" id="filter-horror" class="w-4 h-4 accent-amber-400 cursor-pointer">
+                                <span class="font-medium">Horror</span>
+                            </label>
+                        </li>
+                    </ul>
+                    <button type="reset" class="mt-auto text-sm text-amber-300 hover:text-white underline text-left transition cursor-pointer">
+                        Reset to default
+                    </button>
+                </form>
             </aside>
             <ul id="book-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:flex-[3] w-full max-h-[600px] overflow-y-auto">
-                <li data-genre="Classic" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
+                <li data-genre="Classic" class="hidden group-has-[#filter-classic:checked]:flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
                     <div>
                         <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Classic</span>
                         <h3 class="text-base font-semibold mt-1 leading-snug">Crime and Punishment</h3>
@@ -91,7 +88,7 @@
                         <button class="bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-1.5 px-4 rounded-lg transition">Buy</button>
                     </div>
                 </li>
-                <li data-genre="Classic" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
+                <li data-genre="Classic" class="hidden group-has-[#filter-classic:checked]:flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
                     <div>
                         <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Classic</span>
                         <h3 class="text-base font-semibold mt-1 leading-snug">Anna Karenina</h3>
@@ -102,7 +99,7 @@
                         <button class="bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-1.5 px-4 rounded-lg transition">Buy</button>
                     </div>
                 </li>
-                <li data-genre="Classic" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
+                <li data-genre="Classic" class="hidden group-has-[#filter-classic:checked]:flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
                     <div>
                         <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Classic</span>
                         <h3 class="text-base font-semibold mt-1 leading-snug">Don Quixote</h3>
@@ -113,7 +110,7 @@
                         <button class="bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-1.5 px-4 rounded-lg transition">Buy</button>
                     </div>
                 </li>
-                <li data-genre="Classic" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
+                <li data-genre="Classic" class="hidden group-has-[#filter-classic:checked]:flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
                     <div>
                         <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Classic</span>
                         <h3 class="text-base font-semibold mt-1 leading-snug">The Odyssey</h3>
@@ -124,7 +121,7 @@
                         <button class="bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-1.5 px-4 rounded-lg transition">Buy</button>
                     </div>
                 </li>
-                <li data-genre="Classic" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
+                <li data-genre="Classic" class="hidden group-has-[#filter-classic:checked]:flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
                     <div>
                         <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Classic</span>
                         <h3 class="text-base font-semibold mt-1 leading-snug">Madame Bovary</h3>
@@ -135,7 +132,7 @@
                         <button class="bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-1.5 px-4 rounded-lg transition">Buy</button>
                     </div>
                 </li>
-                <li data-genre="Classic" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
+                <li data-genre="Classic" class="hidden group-has-[#filter-classic:checked]:flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
                     <div>
                         <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Classic</span>
                         <h3 class="text-base font-semibold mt-1 leading-snug">Great Expectations</h3>
@@ -146,7 +143,7 @@
                         <button class="bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-1.5 px-4 rounded-lg transition">Buy</button>
                     </div>
                 </li>
-                <li data-genre="Sci-Fi" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
+                <li data-genre="Sci-Fi" class="hidden group-has-[#filter-scifi:checked]:flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
                     <div>
                         <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Sci-Fi</span>
                         <h3 class="text-base font-semibold mt-1 leading-snug">Dune</h3>
@@ -157,7 +154,7 @@
                         <button class="bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-1.5 px-4 rounded-lg transition">Buy</button>
                     </div>
                 </li>
-                <li data-genre="Sci-Fi" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
+                <li data-genre="Sci-Fi" class="hidden group-has-[#filter-scifi:checked]:flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
                     <div>
                         <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Sci-Fi</span>
                         <h3 class="text-base font-semibold mt-1 leading-snug">1984</h3>
@@ -168,7 +165,7 @@
                         <button class="bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-1.5 px-4 rounded-lg transition">Buy</button>
                     </div>
                 </li>
-                <li data-genre="Sci-Fi" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
+                <li data-genre="Sci-Fi" class="hidden group-has-[#filter-scifi:checked]:flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
                     <div>
                         <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Sci-Fi</span>
                         <h3 class="text-base font-semibold mt-1 leading-snug">Brave New World</h3>
@@ -179,7 +176,7 @@
                         <button class="bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-1.5 px-4 rounded-lg transition">Buy</button>
                     </div>
                 </li>
-                <li data-genre="Sci-Fi" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
+                <li data-genre="Sci-Fi" class="hidden group-has-[#filter-scifi:checked]:flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
                     <div>
                         <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Sci-Fi</span>
                         <h3 class="text-base font-semibold mt-1 leading-snug">The Martian</h3>
@@ -190,7 +187,7 @@
                         <button class="bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-1.5 px-4 rounded-lg transition">Buy</button>
                     </div>
                 </li>
-                <li data-genre="Sci-Fi" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
+                <li data-genre="Sci-Fi" class="hidden group-has-[#filter-scifi:checked]:flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
                     <div>
                         <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Sci-Fi</span>
                         <h3 class="text-base font-semibold mt-1 leading-snug">Ender's Game</h3>
@@ -201,7 +198,7 @@
                         <button class="bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-1.5 px-4 rounded-lg transition">Buy</button>
                     </div>
                 </li>
-                <li data-genre="Sci-Fi" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
+                <li data-genre="Sci-Fi" class="hidden group-has-[#filter-scifi:checked]:flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
                     <div>
                         <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Sci-Fi</span>
                         <h3 class="text-base font-semibold mt-1 leading-snug">Foundation</h3>
@@ -212,7 +209,7 @@
                         <button class="bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-1.5 px-4 rounded-lg transition">Buy</button>
                     </div>
                 </li>
-                <li data-genre="Fantasy" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
+                <li data-genre="Fantasy" class="hidden group-has-[#filter-fantasy:checked]:flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
                     <div>
                         <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Fantasy</span>
                         <h3 class="text-base font-semibold mt-1 leading-snug">The Hobbit</h3>
@@ -223,7 +220,7 @@
                         <button class="bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-1.5 px-4 rounded-lg transition">Buy</button>
                     </div>
                 </li>
-                <li data-genre="Fantasy" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
+                <li data-genre="Fantasy" class="hidden group-has-[#filter-fantasy:checked]:flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
                     <div>
                         <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Fantasy</span>
                         <h3 class="text-base font-semibold mt-1 leading-snug">Harry Potter and the Philosopher's Stone</h3>
@@ -234,7 +231,7 @@
                         <button class="bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-1.5 px-4 rounded-lg transition">Buy</button>
                     </div>
                 </li>
-                <li data-genre="Fantasy" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
+                <li data-genre="Fantasy" class="hidden group-has-[#filter-fantasy:checked]:flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
                     <div>
                         <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Fantasy</span>
                         <h3 class="text-base font-semibold mt-1 leading-snug">The Name of the Wind</h3>
@@ -245,7 +242,7 @@
                         <button class="bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-1.5 px-4 rounded-lg transition">Buy</button>
                     </div>
                 </li>
-                <li data-genre="Fantasy" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
+                <li data-genre="Fantasy" class="hidden group-has-[#filter-fantasy:checked]:flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
                     <div>
                         <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Fantasy</span>
                         <h3 class="text-base font-semibold mt-1 leading-snug">A Game of Thrones</h3>
@@ -256,7 +253,7 @@
                         <button class="bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-1.5 px-4 rounded-lg transition">Buy</button>
                     </div>
                 </li>
-                <li data-genre="Fantasy" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
+                <li data-genre="Fantasy" class="hidden group-has-[#filter-fantasy:checked]:flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
                     <div>
                         <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Fantasy</span>
                         <h3 class="text-base font-semibold mt-1 leading-snug">The Way of Kings</h3>
@@ -267,7 +264,7 @@
                         <button class="bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-1.5 px-4 rounded-lg transition">Buy</button>
                     </div>
                 </li>
-                <li data-genre="Fantasy" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
+                <li data-genre="Fantasy" class="hidden group-has-[#filter-fantasy:checked]:flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
                     <div>
                         <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Fantasy</span>
                         <h3 class="text-base font-semibold mt-1 leading-snug">The Lion, the Witch and the Wardrobe</h3>
@@ -278,7 +275,7 @@
                         <button class="bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-1.5 px-4 rounded-lg transition">Buy</button>
                     </div>
                 </li>
-                <li data-genre="Romance" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
+                <li data-genre="Romance" class="hidden group-has-[#filter-romance:checked]:flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
                     <div>
                         <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Romance</span>
                         <h3 class="text-base font-semibold mt-1 leading-snug">Pride and Prejudice</h3>
@@ -289,7 +286,7 @@
                         <button class="bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-1.5 px-4 rounded-lg transition">Buy</button>
                     </div>
                 </li>
-                <li data-genre="Romance" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
+                <li data-genre="Romance" class="hidden group-has-[#filter-romance:checked]:flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
                     <div>
                         <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Romance</span>
                         <h3 class="text-base font-semibold mt-1 leading-snug">Jane Eyre</h3>
@@ -300,7 +297,7 @@
                         <button class="bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-1.5 px-4 rounded-lg transition">Buy</button>
                     </div>
                 </li>
-                <li data-genre="Romance" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
+                <li data-genre="Romance" class="hidden group-has-[#filter-romance:checked]:flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
                     <div>
                         <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Romance</span>
                         <h3 class="text-base font-semibold mt-1 leading-snug">Wuthering Heights</h3>
@@ -311,7 +308,7 @@
                         <button class="bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-1.5 px-4 rounded-lg transition">Buy</button>
                     </div>
                 </li>
-                <li data-genre="Romance" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
+                <li data-genre="Romance" class="hidden group-has-[#filter-romance:checked]:flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
                     <div>
                         <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Romance</span>
                         <h3 class="text-base font-semibold mt-1 leading-snug">The Notebook</h3>
@@ -322,7 +319,7 @@
                         <button class="bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-1.5 px-4 rounded-lg transition">Buy</button>
                     </div>
                 </li>
-                <li data-genre="Romance" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
+                <li data-genre="Romance" class="hidden group-has-[#filter-romance:checked]:flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
                     <div>
                         <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Romance</span>
                         <h3 class="text-base font-semibold mt-1 leading-snug">Outlander</h3>
@@ -333,7 +330,7 @@
                         <button class="bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-1.5 px-4 rounded-lg transition">Buy</button>
                     </div>
                 </li>
-                <li data-genre="Romance" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
+                <li data-genre="Romance" class="hidden group-has-[#filter-romance:checked]:flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
                     <div>
                         <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Romance</span>
                         <h3 class="text-base font-semibold mt-1 leading-snug">Me Before You</h3>
@@ -344,7 +341,7 @@
                         <button class="bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-1.5 px-4 rounded-lg transition">Buy</button>
                     </div>
                 </li>
-                <li data-genre="Horror" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
+                <li data-genre="Horror" class="hidden group-has-[#filter-horror:checked]:flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
                     <div>
                         <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Horror</span>
                         <h3 class="text-base font-semibold mt-1 leading-snug">Dracula</h3>
@@ -355,7 +352,7 @@
                         <button class="bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-1.5 px-4 rounded-lg transition">Buy</button>
                     </div>
                 </li>
-                <li data-genre="Horror" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
+                <li data-genre="Horror" class="hidden group-has-[#filter-horror:checked]:flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
                     <div>
                         <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Horror</span>
                         <h3 class="text-base font-semibold mt-1 leading-snug">Frankenstein</h3>
@@ -366,7 +363,7 @@
                         <button class="bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-1.5 px-4 rounded-lg transition">Buy</button>
                     </div>
                 </li>
-                <li data-genre="Horror" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
+                <li data-genre="Horror" class="hidden group-has-[#filter-horror:checked]:flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
                     <div>
                         <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Horror</span>
                         <h3 class="text-base font-semibold mt-1 leading-snug">The Shining</h3>
@@ -377,7 +374,7 @@
                         <button class="bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-1.5 px-4 rounded-lg transition">Buy</button>
                     </div>
                 </li>
-                <li data-genre="Horror" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
+                <li data-genre="Horror" class="hidden group-has-[#filter-horror:checked]:flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
                     <div>
                         <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Horror</span>
                         <h3 class="text-base font-semibold mt-1 leading-snug">It</h3>
@@ -388,7 +385,7 @@
                         <button class="bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-1.5 px-4 rounded-lg transition">Buy</button>
                     </div>
                 </li>
-                <li data-genre="Horror" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
+                <li data-genre="Horror" class="hidden group-has-[#filter-horror:checked]:flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
                     <div>
                         <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Horror</span>
                         <h3 class="text-base font-semibold mt-1 leading-snug">House of Leaves</h3>
@@ -399,7 +396,7 @@
                         <button class="bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium py-1.5 px-4 rounded-lg transition">Buy</button>
                     </div>
                 </li>
-                <li data-genre="Horror" class="flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
+                <li data-genre="Horror" class="hidden group-has-[#filter-horror:checked]:flex flex-col justify-between bg-slate-800 rounded-lg p-4 h-52 text-white">
                     <div>
                         <span class="text-xs uppercase tracking-wider text-amber-400 font-medium">Horror</span>
                         <h3 class="text-base font-semibold mt-1 leading-snug">Pet Sematary</h3>
@@ -454,29 +451,27 @@
             </ol>
         </section>
     </main>
-    <footer class="flex justify-center items-center p-4 bg-slate-900 text-slate-400 flex-shrink-0">
-        <p>&copy; 2026 Exceptional Team, All rights reserved.</p>
+   
+    <footer class="bg-slate-900 text-slate-400 py-10 md:py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <div class="text-white font-bold text-base md:text-lg mb-2 md:mb-3 flex items-center space-x-2">
+                    <span>📚</span> <span>Library</span>
+                </div>
+                <p class="text-xs md:text-sm">Your city's cultural center.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-2 md:mb-3 text-xs md:text-sm uppercase tracking-wider">Working Hours</h4>
+                <p class="text-xs md:text-sm mb-1">Tue – Fri: 10:00 – 20:00</p>
+                <p class="text-xs md:text-sm">Sat – Sun: 11:00 – 18:00</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-2 md:mb-3 text-xs md:text-sm uppercase tracking-wider">Contacts</h4>
+                <p class="text-xs md:text-sm mb-1">42 Knizhnaya St.</p>
+                <p class="text-xs md:text-sm">Phone: +7 (XXX) XXX-XX-XX</p>
+            </div>
+        </div>
     </footer>
-    <script>
-        const checkboxes = document.querySelectorAll('#filter-list input[type="checkbox"]');
-        const books = document.querySelectorAll('#book-list li');
-        function applyFilter() {
-            const active = new Set(
-                [...checkboxes].filter(cb => cb.checked).map(cb => cb.value)
-            );
-            books.forEach(li => {
-                li.style.display = active.has(li.dataset.genre) ? '' : 'none';
-            });
-        }
-        checkboxes.forEach(cb => cb.addEventListener('change', applyFilter));
-        document.getElementById('clear-filters').addEventListener('click', () => {
-            checkboxes.forEach(cb => cb.checked = false);
-            applyFilter();
-        });
-        document.getElementById('select-all-filters').addEventListener('click', () => {
-            checkboxes.forEach(cb => cb.checked = true);
-            applyFilter();
-        });
-    </script>
+
 </body>
 </html>
