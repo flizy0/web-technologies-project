@@ -54,47 +54,68 @@
             </div>
    
             
-        </section>
+        <!-- Catalog Section -->
+<section class="max-w-7xl mx-auto px-4 py-16">
+    <div class="flex flex-col lg:flex-row gap-12 items-center">
+        
+        <!-- Левая колонка: Заголовок, описание и кнопка -->
+        <div class="flex-1 flex flex-col justify-between text-center lg:text-left">
+            <div>
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">Our Catalog</h2>
+                <p class="text-slate-600 text-lg leading-relaxed mb-6">
+                    Explore our diverse collection. Find your favorite genres and discover captivating stories tailored to every reader.
+                </p>
+            </div>
+            <div>
+                <a href="catalog.html" class="inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold px-6 py-3 rounded-lg shadow-sm transition">
+                    View Full Catalog &rarr;
+                </a>
+            </div>
+        </div>
 
-
-
-        <section class = "max-w-full mx-auto px-4 py-16 flex-col md:flex-row gap-12 items-center">
-             <div class="flex-1 ">
-                <h2>Our catalog</h2>
-                <p>bla bla bla text</p>
-                <button>
-
-                </button>
-             </div>
-             <a href="catalog.html" class="border-4 rounded-lg bg-white"  >
-                <h4>Classic</h4>
-                <img src="">
-                <p class="text-slate-600 mt-1 text-sm font-medium">Don Quixote</p>
-             </a>
-              <a href="catalog.html" class="border-4 rounded-lg bg-white"  >
-                <h4>Sci-fi</h4>
-                <img src="">
-                <p class="text-slate-600 mt-1 text-sm font-medium">1984</p>
+        <!-- Правая колонка: Карточки с жанрами (с акцентом на жанр) -->
+        <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+            
+            <!-- Карточка 1: Жанр в приоритете -->
+            <a href="catalog.html" class="group bg-white p-5 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition">
+                <h3 class="text-xl font-bold text-amber-600 mb-1">Classic</h3>
+                <p class="text-xs text-stone-400 mb-3">Example: Don Quixote</p>
+                <div class="aspect-[16/9] w-full bg-stone-100 rounded-lg flex items-center justify-center overflow-hidden">
+                    <span class="text-stone-400 text-xs">Genre Image</span>
+                </div>
             </a>
-             <a href="catalog.html" class="border-4 rounded-lg bg-white"  >
-                <h4>Fantasy</h4>
-                <img src="">
-                <p class="text-slate-600 mt-1 text-sm font-medium">The Hobbit</p>
-            </a>
-              <a href="catalog.html" class="border-4 rounded-lg bg-white"  >
-                <h4>Romance</h4>
-                <img src="">
-                <p>The Notebook</p>
-            </a>
-            <a href="catalog.html" class="border-4 rounded-lg bg-white"  >
-                 <h4>Horror</h4>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxSv1dUeN_pCaZ8rn3AA0nIu7iJ2sNb7i3n0nxhKpvqg&s">
-                <p class="text-slate-600 mt-1 text-sm font-medium">It</p>
-            </a>
-             <div>
 
-             </div>
-        </section>
+            <!-- Карточка 2 -->
+            <a href="catalog.html" class="group bg-white p-5 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition">
+                <h3 class="text-xl font-bold text-amber-600 mb-1">Sci-Fi</h3>
+                <p class="text-xs text-stone-400 mb-3">Example: 1984</p>
+                <div class="aspect-[16/9] w-full bg-stone-100 rounded-lg flex items-center justify-center overflow-hidden">
+                    <span class="text-stone-400 text-xs">Genre Image</span>
+                </div>
+            </a>
+
+            <!-- Карточка 3 -->
+            <a href="catalog.html" class="group bg-white p-5 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition">
+                <h3 class="text-xl font-bold text-amber-600 mb-1">Fantasy</h3>
+                <p class="text-xs text-stone-400 mb-3">Example: The Hobbit</p>
+                <div class="aspect-[16/9] w-full bg-stone-100 rounded-lg flex items-center justify-center overflow-hidden">
+                    <span class="text-stone-400 text-xs">Genre Image</span>
+                </div>
+            </a>
+
+            <!-- Карточка 4 -->
+            <a href="catalog.html" class="group bg-white p-5 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition">
+                <h3 class="text-xl font-bold text-amber-600 mb-1">Romance</h3>
+                <p class="text-xs text-stone-400 mb-3">Example: The Notebook</p>
+                <div class="aspect-[16/9] w-full bg-stone-100 rounded-lg flex items-center justify-center overflow-hidden">
+                    <span class="text-stone-400 text-xs">Genre Image</span>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+</section>
 
         <section class=" bg-stone-200 max-w-full mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
             <div  class=" flex-1 text-center md:text-left mt-5">
@@ -111,8 +132,8 @@
 
         </section>
 
-        <section class=" max-w-full mx-auto px-6 py-12 md:py-20 flex flex-col md:flex-row items-center gap-0 bg-stone-200">
-            <div class="flex-3">
+        <section class="max-w-full mx-auto px-6 py-12 md:py-20 bg-stone-200">
+            <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 items-start">
                 <h3 class="mb-2 text-lg font-semibold text-slate-800">
                     Send an Inquiry
                 </h3>
@@ -185,7 +206,7 @@
                             Send an inquiry
                             <span aria-hidden="true">→</span>
                         </button>
-                         <div class="mt-4 rounded-xl bg-stone-100 p-4 flex-1">
+                         <div class="w-full lg:flex-[1]">
 
                     <h4 class="font-semibold text-slate-800">
                         Our Address
