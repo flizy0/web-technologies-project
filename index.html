@@ -6,7 +6,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
-<body   class="bg-slate-50 text-slate-800 font-sans antialiased">
+<body   class="bg-slate-50 text-slate-800 font-sans antialiased" >
     <header class="bg-white shadow-sm sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex min-h-20 flex-wrap items-center justify-between gap-4">
 
@@ -40,30 +40,175 @@
     </div>
 </header>
     <main>
-        <section class=" max-w-6xl mx-auto px-6 py-12 md:py-20 flex flex-col md:flex-row items-center gap-10" >
-           
-           <div class="flex-1 text-center md:text-left flex-col ">
-             <h1 class="text-4xl font-bold flex-2">Welcome to the Baroness</h1>
-            <p class="text-lg flex-1 ">May you find your book in our library</p>
-            <div class="gap-100 flex-1">
-            <button a href="catalog.html" class="border-10 rounded-lg bg-cyan-500 font-bold">See what we have </button>
-            <button a href="about_us.html" class="border-10 rounded-lg bg-green-500 font-bold">Why us?</button>
+        <section class=" max-w-full mx-auto px-6 py-12 md:py-20 flex flex-col md:flex-row items-center gap-0 bg-stone-200 " >
+           <div class="flex-1 text-center md:text-left flex-col gap-10 ml-20">
+             <h1 class="text-6xl font-bold flex-2">Welcome to the Baroness</h1>
+            <p class="text-3xl flex-1 mt-8">May you find your book in our library</p>
+            <div class="flex-1 mt-10">
+            <button a href="catalog.html" class="border-4 border-black rounded-full bg-cyan-500 font-bold text-2xl px-2 py-2">See what we have </button>
+            <button a href="about_us.html" class="border-4 border-black rounded-full bg-green-500 font-bold text-2xl px-2 py-2">Why us?</button>
             </div>
            </div>
-            <div class="justify-center flex-1">
+            <div class="justify-center flex-1 mr-20" >
             <img src="https://almatylibrary.kz/wp-content/uploads/2024/08/yes_6155.jpg">
             </div>
+   
             
         </section>
 
 
 
-        <section class = "">
-            <h2>Our catalog</h2>
+        <section class = "max-w-full mx-auto px-4 py-16 flex-col md:flex-row gap-12 items-center">
+             <div class="flex-1 ">
+                <h2>Our catalog</h2>
+                <p>bla bla bla text</p>
+                <button>
 
-            <div></div>
-            <div
-     
+                </button>
+             </div>
+             <a href="catalog.html" class="border-4 rounded-lg bg-white"  >
+                <h4>Classic</h4>
+                <img src="">
+                <p class="text-slate-600 mt-1 text-sm font-medium">Don Quixote</p>
+             </a>
+              <a href="catalog.html" class="border-4 rounded-lg bg-white"  >
+                <h4>Sci-fi</h4>
+                <img src="">
+                <p class="text-slate-600 mt-1 text-sm font-medium">1984</p>
+            </a>
+             <a href="catalog.html" class="border-4 rounded-lg bg-white"  >
+                <h4>Fantasy</h4>
+                <img src="">
+                <p class="text-slate-600 mt-1 text-sm font-medium">The Hobbit</p>
+            </a>
+              <a href="catalog.html" class="border-4 rounded-lg bg-white"  >
+                <h4>Romance</h4>
+                <img src="">
+                <p>The Notebook</p>
+            </a>
+            <a href="catalog.html" class="border-4 rounded-lg bg-white"  >
+                 <h4>Horror</h4>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxSv1dUeN_pCaZ8rn3AA0nIu7iJ2sNb7i3n0nxhKpvqg&s">
+                <p class="text-slate-600 mt-1 text-sm font-medium">It</p>
+            </a>
+             <div>
+
+             </div>
+        </section>
+
+        <section class=" bg-stone-200 max-w-full mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
+            <div  class=" flex-1 text-center md:text-left mt-5">
+            <h2 class="text-5xl font-bold flex-2">Why us?</h2>
+            <p class="text-3xl flex-1 mt-8">We ensure good conditions for leisure and study.Additionally our archives cover a sufficent range of genres to satisfy any customer </p>
+            <a href = "about_us.html" class="bg-blue-400 text-white rounded-lg font-bold px-6 py-3 inline-block mt-5">Learn more</a>
+            </div>
+            <arcticle  class="flex-1 grid grid-cols-2 gap-4 w-full mt-10">
+            <div class="bg-white p-6 rounded-2xl shadow-sm text-center border border-stone-100">   <h4 class="text-3xl font-bold text-amber-600">50k+</h4> <p class="text-slate-600 mt-1 text-sm font-medium">Books in catalog</p>   </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm text-center border border-stone-100">   <h4 class="text-3xl font-bold text-amber-600">12k</h4> <p class="text-slate-600 mt-1 text-sm font-medium">Readers</p>   </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm text-center border border-stone-100">   <h4 class="text-3xl font-bold text-amber-600">15+</h4> <p class="text-slate-600 mt-1 text-sm font-medium">Clubs</p>   </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm text-center border border-stone-100">   <h4 class="text-3xl font-bold text-amber-600">1954</h4> <p class="text-slate-600 mt-1 text-sm font-medium">Founded</p>   </div>
+           </arcticle>
+
+        </section>
+
+        <section class=" max-w-full mx-auto px-6 py-12 md:py-20 flex flex-col md:flex-row items-center gap-0 bg-stone-200">
+            <div class="flex-3">
+                <h3 class="mb-2 text-lg font-semibold text-slate-800">
+                    Send an Inquiry
+                </h3>
+                <p class="mb-5 text-sm leading-6 text-slate-500">
+                    Заполните поля ниже, и мы сможем связаться с вами.
+                </p>
+                <form id="feedback" action="#" method="post" class="space-y-5">
+                    <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                        <div>
+                            <label for="first_name"
+                                   class="mb-2 block text-sm font-medium text-slate-700">
+                                Name
+                            </label>
+                            <input
+                                type="text"
+                                id="first_name"
+                                name="first_name"
+                                autocomplete="name"
+                                placeholder="Your name"
+                                required
+                                class="w-full rounded-lg border border-stone-300 bg-stone-100 px-4 py-3 text-sm text-slate-900 placeholder:text-stone-400 focus:border-amber-600 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-200">
+                        </div>
+                        <div>
+                            <label for="email"
+                                   class="mb-2 block text-sm font-medium text-slate-700">
+                                E-mail
+                            </label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                autocomplete="email"
+                                placeholder="you@fol.kz"
+                                required
+                                class="w-full rounded-lg border border-stone-300 bg-stone-100 px-4 py-3 text-sm text-slate-900 placeholder:text-stone-400 focus:border-amber-600 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-200">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="title"
+                               class="mb-2 block text-sm font-medium text-slate-700">
+                            Subject
+                        </label>
+                        <input
+                            type="text"
+                            id="title"
+                            name="title"
+                            placeholder="What is your question about?"
+                            required
+                            class="w-full rounded-lg border border-stone-300 bg-stone-100 px-4 py-3 text-sm text-slate-900 placeholder:text-stone-400 focus:border-amber-600 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-200">
+                    </div>
+                    <div>
+                        <label for="comment"
+                               class="mb-2 block text-sm font-medium text-slate-700">
+                            Message
+                        </label>
+                        <textarea
+                            id="comment"
+                            name="comment"
+                            rows="5"
+                            placeholder="Write your message here..."
+                            required
+                            class="w-full resize-y rounded-lg border border-stone-300 bg-stone-100 px-4 py-3 text-sm text-slate-900 placeholder:text-stone-400 focus:border-amber-600 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-200">
+                        </textarea>
+                    </div>
+                    <div class="pt-1">
+                        <button
+                            type="submit"
+                            name="submit_form"
+                            class="inline-flex items-center justify-center gap-2 rounded-lg bg-amber-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2">
+                            Send an inquiry
+                            <span aria-hidden="true">→</span>
+                        </button>
+                         <div class="mt-4 rounded-xl bg-stone-100 p-4 flex-1">
+
+                    <h4 class="font-semibold text-slate-800">
+                        Our Address
+                    </h4>
+                    <p class="mt-2 text-sm leading-6 text-slate-600">
+                        3828 Piermont Dr NE,
+                        Albuquerque, NM 87111, USA
+                    </p>
+                    <p class="mt-2 text-sm text-slate-600">
+                        Phone:
+                        <a href="tel:+15550179"
+                           class="text-amber-700 hover:underline">
+                            555-0179
+                        </a>
+                    </p>
+                    <p class="mt-1 text-sm text-slate-600">
+                        E-mail:
+                        <a href="mailto:fol@fol.kz"
+                           class="text-amber-700 hover:underline">
+                            fol@fol.kz
+                        </a>
+                    </p>
+                </div>
         </section>
    
 
